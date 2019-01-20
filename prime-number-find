@@ -1,0 +1,24 @@
+# coding=utf-8
+# with python2.7
+prime_num = list()
+
+
+def pn(n):
+    for i in range(2, n+1):
+        if i == 2:
+            prime_num.append(2)
+        elif i > 2:
+            div_able = False
+            for x in prime_num:
+                a, b = divmod(i, x)
+                # print(b, i, x)
+                if b == 0:
+                    div_able = True
+            if not div_able:
+                if i not in prime_num:
+                    prime_num.append(i)
+
+number = raw_input('pls input number:')
+pn(int(number))
+print 'prime number is: '
+print(prime_num)
